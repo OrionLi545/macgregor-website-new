@@ -1,1 +1,64 @@
-HELLO WORLD
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIT Macgregor House</title>
+    <link rel="shortcut icon" href="https://material.io/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="bundle-main.css">
+</head>
+
+<body>
+
+    <header class="mdc-top-app-bar app-bar" id="app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
+                    aria-label="Open navigation menu">menu</button>
+                <span class="mdc-top-app-bar__title">Page title</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+                    aria-label="Favorite">favorite</button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+                    aria-label="Search">search</button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+                    aria-label="Options">more_vert</button>
+            </section>
+        </div>
+    </header>
+    <aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--fixed-adjust">
+        <div class="mdc-drawer__content">
+            <div class="mdc-list">
+                <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page">
+                    <span class="mdc-list-item__ripple"></span>
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
+                    <span class="mdc-list-item__text">Inbox</span>
+                </a>
+                <a class="mdc-list-item" href="#">
+                    <span class="mdc-list-item__ripple"></span>
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
+                    <span class="mdc-list-item__text">Outgoing</span>
+                </a>
+                <a class="mdc-list-item" href="#">
+                    <span class="mdc-list-item__ripple"></span>
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+                    <span class="mdc-list-item__text">Drafts</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+    <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
+        <main class="main-content" id="main-content">
+            App Content
+        </main>
+    </div>
+
+    <script src="bundle-main.js" defer></script>
+</body>
+
+</html>

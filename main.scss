@@ -1,0 +1,40 @@
+@use "@material/theme" with (
+  $primary: #212121,
+  $secondary: #991616,
+  $on-primary: #ffffff,
+  $on-secondary: #ffffff,
+);
+
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "./common";
+@use "@material/button/styles" as button-styles;
+@use "@material/drawer";
+// @use "@material/list";
+@use "@material/icon-button/styles" as icon-button-styles;
+@use "@material/list/evolution-mixins"as list-evolution-mixins;
+
+@include drawer.core-styles;
+@include drawer.dismissible-core-styles;
+@include drawer.modal-core-styles;
+// @include list.core-styles;
+@include list-evolution-mixins.core-styles();
+
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
+
+.main-content {
+  overflow: auto;
+  height: 100%;
+}
+
+.app-bar {
+  position: absolute;
+}
+
+// Only apply this style if below top app bar.
+.mdc-top-app-bar {
+  z-index: 7;
+}
