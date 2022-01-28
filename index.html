@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="bundle-main.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://projects.davidlynch.org/maphilight/jquery.maphilight.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.maphilighted').maphilight()
+        });
+    </script>
 </head>
 
 <body>
@@ -36,7 +43,10 @@
             <div class="mdc-list--icon-list">
                 <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page">
                     <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
+                    <div class="drawer-list-item-icon-helper">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true"
+                            style="margin-right: 40%;">home</i>
+                    </div>
                     <span class="mdc-list-item__text">
                         <span class="mdc-list-item__primary-text">MACGREGOR HOUSE</span>
                         <span class="mdc-list-item__secondary-text">HOME PAGE</span>
@@ -45,7 +55,10 @@
                 <hr class="mdc-list-divider">
                 <a class="mdc-list-item" href="#">
                     <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
+                    <div class="drawer-list-item-icon-helper">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true"
+                            style="margin-right: 40%;">info</i>
+                    </div>
                     <span class="mdc-list-item__text">
                         <span class="mdc-list-item__primary-text">About</span>
                         <span class="mdc-list-item__secondary-text">Check out the photos!</span>
@@ -54,7 +67,10 @@
                 <hr class="mdc-list-divider">
                 <a class="mdc-list-item" href="#">
                     <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+                    <div class="drawer-list-item-icon-helper">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true"
+                            style="margin-right: 40%;">emoji_people</i>
+                    </div>
                     <span class="mdc-list-item__text">
                         <span class="mdc-list-item__primary-text">First Years</span>
                         <span class="mdc-list-item__secondary-text">Interested in coming?</span>
@@ -63,7 +79,10 @@
                 <hr class="mdc-list-divider">
                 <a class="mdc-list-item" href="#">
                     <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+                    <div class="drawer-list-item-icon-helper">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true"
+                            style="margin-right: 40%;">person_search</i>
+                    </div>
                     <span class="mdc-list-item__text">
                         <span class="mdc-list-item__primary-text">People</span>
                         <span class="mdc-list-item__secondary-text">Who to find for help?</span>
@@ -72,7 +91,10 @@
                 <hr class="mdc-list-divider">
                 <a class="mdc-list-item" href="#">
                     <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+                    <div class="drawer-list-item-icon-helper">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true"
+                            style="margin-right: 40%;">event</i>
+                    </div>
                     <span class="mdc-list-item__text">
                         <span class="mdc-list-item__primary-text">Facilities and Events</span>
                         <span class="mdc-list-item__secondary-text">Check out room usage!</span>
@@ -81,7 +103,10 @@
                 <hr class="mdc-list-divider">
                 <a class="mdc-list-item" href="#">
                     <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+                    <div class="drawer-list-item-icon-helper">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true"
+                            style="margin-right: 40%;">handshake</i>
+                    </div>
                     <span class="mdc-list-item__text">
                         <span class="mdc-list-item__primary-text">Resources</span>
                         <span class="mdc-list-item__secondary-text">We are here for you!</span>
@@ -90,7 +115,10 @@
                 <hr class="mdc-list-divider">
                 <a class="mdc-list-item" href="#">
                     <span class="mdc-list-item__ripple"></span>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+                    <div class="drawer-list-item-icon-helper">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true"
+                            style="margin-right: 40%;">alternate_email</i>
+                    </div>
                     <span class="mdc-list-item__text">
                         <span class="mdc-list-item__primary-text">Contact Us</span>
                         <span class="mdc-list-item__secondary-text">Wanna join mac-web?</span>
@@ -102,7 +130,57 @@
     </aside>
     <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
         <main class="main-content" id="main-content">
-            App Content
+            <div class="home-map-container">
+                <div id="macg-image-map" style="width: 622px; margin: 0px auto;">
+                    <div class="map-container">
+                        <canvas id="map-canvas" height="610" width="622"></canvas>
+                        <img src="/public/images/macgregor-schematic-outline.png" width="622" height="610"
+                            class="map maphilighted" usemap="#macg"
+                            style="opacity: 0; position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px;">
+                    </div>
+                    <map name="macg">
+                        <area href="/entry/a" shape="poly" coords="285,68,329,92,417,42,417,93,329,144,285,119"
+                            alt="Link"
+                            data-maphilight="{&quot;strokeColor&quot;:&quot;ffffff&quot;,&quot;strokeWidth&quot;:2,&quot;fillColor&quot;:&quot;80eeff&quot;,&quot;fillOpacity&quot;:0.5}"
+                            title="A Entry">
+                        <area href="/entry/b" shape="poly" coords="285,119,329,144,417,93,417,144,329,194,285,169"
+                            alt="Link"
+                            data-maphilight="{&quot;strokeColor&quot;:&quot;ffffff&quot;,&quot;strokeWidth&quot;:2,&quot;fillColor&quot;:&quot;8080ff&quot;,&quot;fillOpacity&quot;:0.5}"
+                            title="B Entry">
+                        <area href="/entry/c" shape="poly" coords="285,169,329,194,417,144,417,195,329,245,285,220"
+                            alt="Link"
+                            data-maphilight="{&quot;strokeColor&quot;:&quot;ffffff&quot;,&quot;strokeWidth&quot;:2,&quot;fillColor&quot;:&quot;80ff80&quot;,&quot;fillOpacity&quot;:0.5}"
+                            title="C Entry">
+                        <area href="/entry/d" shape="poly" coords="285,220,329,245,417,195,417,245,329,295,285,270"
+                            alt="Link"
+                            data-maphilight="{&quot;strokeColor&quot;:&quot;ffffff&quot;,&quot;strokeWidth&quot;:2,&quot;fillColor&quot;:&quot;ff9180&quot;,&quot;fillOpacity&quot;:0.5}"
+                            title="D Entry">
+                        <area href="/entry/e" shape="poly"
+                            coords="285,270,329,295,402,254,418,244,402,254,402,304,329,346,285,321" alt="Link"
+                            data-maphilight="{&quot;strokeColor&quot;:&quot;ffffff&quot;,&quot;strokeWidth&quot;:2,&quot;fillColor&quot;:&quot;0f0f0f&quot;,&quot;fillOpacity&quot;:0.5}"
+                            title="E Entry">
+                        <area href="/entry/f" shape="poly"
+                            coords="402,254,446,228,593,313,593,381,520,423,520,355,475,330,447,346,402,322" alt="Link"
+                            data-maphilight="{&quot;strokeColor&quot;:&quot;ffffff&quot;,&quot;strokeWidth&quot;:2,&quot;fillColor&quot;:&quot;ff80ff&quot;,&quot;fillOpacity&quot;:0.5}"
+                            title="F Entry">
+                        <area href="/entry/g" shape="poly" coords="475,330,520,355,520,423,329,533,329,466,285,440"
+                            alt="Link"
+                            data-maphilight="{&quot;strokeColor&quot;:&quot;ffffff&quot;,&quot;strokeWidth&quot;:2,&quot;fillColor&quot;:&quot;ff6600&quot;,&quot;fillOpacity&quot;:0.5}"
+                            title="G Entry">
+                        <area href="/entry/h/index.html" shape="poly"
+                            coords="285,440,329,466,329,533,256,575,138,508,138,440,182,414,256,457" alt="Link"
+                            data-maphilight="{&quot;strokeColor&quot;:&quot;ffffff&quot;,&quot;strokeWidth&quot;:2,&quot;fillColor&quot;:&quot;88ff80&quot;,&quot;fillOpacity&quot;:0.5}"
+                            title="H Entry">
+                        <area href="/entry/j" shape="poly"
+                            coords="182,414,138,440,138,508,65,465,65,398,152,347,196,372,196,422" alt="Link"
+                            data-maphilight="{&quot;strokeColor&quot;:&quot;ffffff&quot;,&quot;strokeWidth&quot;:2,&quot;fillColor&quot;:&quot;bf80ff&quot;,&quot;fillOpacity&quot;:0.5}"
+                            title="J Entry">
+                    </map>
+                    <div class="map-text-container">
+                        <p>Click on a letter to find out more about that entry.</p>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
